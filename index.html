@@ -3,14 +3,61 @@
 <head>
   <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Sublime Exercises</title>
+  <title>Monk's Cafe</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
     <body>
-<div id="map"></div>
+    <img src="images/toms-restaurant.jpg" /><br />
+      <h2 align="center">Monk's Cafe</h2>
+      <div align="center">The Coffee Shop"</div>
+
+    <img src="images/jerry.jpg" /><br />
+
+          <h2 align="center">Reservations</h2>
+
+          <table border="1" margin-right:100px;" width="400">
+<thead>
+<th>Make a Reservation</th>
+<th>Existing Reservation</th>
+</thead>
+<tbody> 
+<tr>
+  <td valign="top">
+    <form>
+    <label>Name</label>
+    <input type="text" placeholder="Your Name">
+     <label>Day</label>
+    <input type="text" placeholder="Day">
+    <button>Confirm Reservation</button>
+</form>
+  </td>
+  <td valign="top">
+      <table width="400" border="1">
+ 
+<tr>
+  <th valign="top">Name
+  </th>
+  <th valign="top">Day</th>
+</tr>
+<tr>
+  <td>Mary Ferrara</td>
+  <td>May 25, 2019</td>
+</tr>
+</table>
+
+<h2 align="center">Come Dine With Us</h2>
 
 <script src="js/jquery-3.0.0.js"></script> 
 <script src="js/main.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Sg_tBphIDQgXd6sJinuTF99q9WITzN0&callback=initMap"></script>
+
+<h2 align="center">Customer Reviews</h2>
+<p>
+  <em>One hell of a meal!</em><br />
+  -Jerry Seinfeld
+
+<div id="map"></div>
+
+
     </body>
   </html>
