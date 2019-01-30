@@ -6,16 +6,16 @@
   <title>Monk's Cafe</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-    <body>
-    <img src="images/toms-restaurant.jpg" /><br />
+    <body background="images/toms-restaurant.jpg" class="bgImg" /><br />
+    <div class="content">
       <h2 align="center">Monk's Cafe</h2>
       <div align="center">The Coffee Shop"</div>
 
     <img src="images/jerry.jpg" /><br />
 
           <h2 align="center">Reservations</h2>
-
-          <table border="1" margin-right:100px;" width="400">
+          <div align="center" width="850px">
+          <table class="tableBorder" margin-right:100px;" width="400" border="0">
 <thead>
 <th>Make a Reservation</th>
 <th>Existing Reservation</th>
@@ -25,14 +25,14 @@
   <td valign="top">
     <form>
     <label>Name</label>
-    <input type="text" placeholder="Your Name">
+    <input type="text" placeholder="Your Name"><br />
      <label>Day</label>
     <input type="text" placeholder="Day">
     <button>Confirm Reservation</button>
 </form>
   </td>
   <td valign="top">
-      <table width="400" border="1">
+      <table width="400" border="0" class="tableBorder">
  
 <tr>
   <th valign="top">Name
@@ -44,20 +44,24 @@
   <td>May 25, 2019</td>
 </tr>
 </table>
-
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h2 align="center">Come Dine With Us</h2>
 
-<script src="js/jquery-3.0.0.js"></script> 
-<script src="js/main.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Sg_tBphIDQgXd6sJinuTF99q9WITzN0&callback=initMap"></script>
 
 <h2 align="center">Customer Reviews</h2>
 <p>
   <em>One hell of a meal!</em><br />
   -Jerry Seinfeld
+</p>
+<div id="map" class="col-md-12" style="height:100vh"></div>
+<script src="js/jquery-3.0.0.js"></script> 
+<script src="js/main.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Sg_tBphIDQgXd6sJinuTF99q9WITzN0&callback=initMap"></script>
 
-<div id="map"></div>
-
-
+</div>
     </body>
   </html>
