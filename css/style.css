@@ -14,23 +14,29 @@ body {
 
 #masthead {
   width:1400px;
-  background: images/toms-restaurant.jpg;
-  font-size:20px;
+   background-image: url("images/toms-restaurant.jpg");
+  font-size:20px!important;
   text-align:right;
   margin:0;
   padding:0;
   height:200px;
-  color:#ffffff;
+  color:#ffffff!important;
+}
+
+#map {
+  width:500px;
 }
 
 .tableLeft {
-margin:0;padding:5px;float:left;position:relative;
+margin:0;padding:15px;float:left;position:relative;
   border:1px solid #cccccc;
+  width:400px;
 }
 
 .tableRight  {
-margin:0;padding:5px;float:right;position:relative;
+margin:0;padding:15px;float:right;position:relative;
   border:1px solid #cccccc;
+  width:400px;
 }
 
 .tableBorder {
