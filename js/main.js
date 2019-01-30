@@ -4,8 +4,8 @@ function initMap() {
   navigator.geolocation.getCurrentPosition(function(position) {
     // create an object to store lat/lng data
     var userLocation = {
-      lat: position.coords.latitude,
-      lng: position.coords.longitude
+    lat: 40.8054491,
+    lng: -73.9654415
     };
        // create a new instance of a map
     // configure map with options object
