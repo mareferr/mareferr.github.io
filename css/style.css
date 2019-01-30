@@ -16,12 +16,14 @@ body {
   text-align:center;
 }
 
-.alignLeft {
+.tableLeft {
 margin:0;padding:0;float:left;position:relative;
+  border:1px solid #cccccc;
 }
 
-.alignRight  {
+.tableRight  {
 margin:0;padding:0;float:right;position:relative;
+  border:1px solid #cccccc;
 }
 
 .tableBorder {
