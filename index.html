@@ -28,9 +28,9 @@ Make a Reservation
   <td valign="top">
     <form id="reservation-form">
     <label>Name</label>
-    <input type="text" placeholder="Your Name"><br />
+    <input type="text" placeholder="Your Name" id="#reservation-name"><br />
      <label>Day</label>
-    <ul><li id="reservation-day"></li>
+ <input type="text" placeholder="reservation-day" id="#reservation-day"><br />
   </ul>
     <button>Confirm Reservation</button>
 </form>
@@ -45,13 +45,18 @@ Existing Reservations
 </th>
 <tr>
   <td valign="top"><strong>Name</strong></td>
-  <td valign="top">Day</td>
+  <td valign="top"><strong>Day</strong></td>
 </tr>
 <tr>
   <td>Mary Ferrara</td>
   <td>
 <script id="reservation-template" type="text/x-handlebars-template">
-    <ul id="reservation-day"><li>{{reservation-day}}</li></ul>
+    <ul id="reservation-name">
+ <li></li></ul>
+ <ul id="reservation-day">
+      <li><a href="">February 5, 2019</a></li>
+ <li><a href="">February 6, 2019</a></li><
+    </ul>
 </script>
   </td>
 </tr>
