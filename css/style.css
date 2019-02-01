@@ -9,12 +9,12 @@ body {
   border:2px solid #cccccc;
   padding:20px;
   text-align:center;
-  width:1400px;
+  width:900px;
 }
 
 #masthead {
-  width:1400px;
-   background-image: url("images/toms-restaurant.jpg");
+  width:900px;
+  background-image: url(images/toms-restaurant.jpg);
   font-size:20px!important;
   text-align:right;
   margin:0;
