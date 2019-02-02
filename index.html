@@ -5,6 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Monk's Cafe</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
 </head>
     <body><br />
     <div id="content">
@@ -26,14 +28,16 @@ Make a Reservation
 </th>
 <tr>
   <td valign="top">
+    <script id="reservation-template" type="text/x-handlebars-template">
     <form id="reservation-form">
     <label>Name</label>
-    <input type="text" placeholder="Your Name" id="#reservation-name"><br />
+    <input type="text" placeholder="Your Name" id="reservation-name"><br />
      <label>Day</label>
- <input type="text" placeholder="reservation-day" id="#reservation-day"><br />
+ <input type="text" placeholder="reservation-day" id="reservation-day"><br />
   </ul>
     <button>Confirm Reservation</button>
 </form>
+</script>
   </td>
 </tr>
 </table>
@@ -48,14 +52,13 @@ Existing Reservations
   <td valign="top"><strong>Day</strong></td>
 </tr>
 <tr>
-  <td>Mary Ferrara</td>
+  <td><ul id="reservation-name"><li></li></ul></td>
   <td>
 <script id="reservation-template" type="text/x-handlebars-template">
     <ul id="reservation-name">
  <li></li></ul>
  <ul id="reservation-day">
-      <li><a href="">February 5, 2019</a></li>
- <li><a href="">February 6, 2019</a></li><
+      <li></li>
     </ul>
 </script>
   </td>
@@ -65,11 +68,11 @@ Existing Reservations
 </div>
 <br clear="all" />
 <h2 align="center">Come Dine With Us</h2>
-<div id="map" class="col-md-12" style="height:100vh">
+<div id="map" class="col-md-12" style="height:100vh"></div>
 <script src="js/jquery-3.0.0.js"></script> 
 <script src="js/main.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Sg_tBphIDQgXd6sJinuTF99q9WITzN0&callback=initMap"></script>
-</div>
+
 
 <br clear="all" />
 <h2 align="center">Customer Reviews</h2>
