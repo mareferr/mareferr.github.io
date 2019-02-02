@@ -6787,11 +6787,16 @@ var database = firebase.database();
 $('#reservation-form').on('submit', function (e) {
   // prevent the page from reloading
   e.preventDefault();
-  // grab user's comment from input field
-  var reservationData = $('#reservation-day').val();
+  // grab user's name and date from input field
+  var reservationDay = $('#reservation-day').val();
+var reservationName = $('#reservation-name').val();
+
+ $('#reservation-day ul').append(reservation-day);
+$('#reservation-name ul').append(reservation-name);
 
   // clear the user's comment from the input (for UX purposes)
   $('#reservation-day').val('')
+    $('#reservation-name').val('')
   // create a section for comments data in your db
   var reservations = database.ref('reservation-day');
   // use the set method to save data to the comments
@@ -6818,7 +6823,7 @@ $('#reservation-form').on('submit', function (e) {
 
 // 3. Retrieve comments data when page loads and when comments are added/updated
 function getReservations() {
-  database.ref('comments').on('value', function (results) {
+  database.ref('reservationData').on('value', function (results) {
     var allReservations = results.val();
     var reservations = [];
     for (var item in allReservations) {
