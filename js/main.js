@@ -2,7 +2,7 @@
 
 
 
- // Initialize Firebase
+
   var config = {
     apiKey: "AIzaSyDq0KHo9QZ4l1WNXsnisMeO5ozVSRdIxhA",
     authDomain: "reservation-site-d9a66.firebaseapp.com",
@@ -20,27 +20,28 @@
 var database = firebase.database();
 
 
+ 
 
   // By default, a form submit reloads the DOM which will subsequently reload all our JS
 
   // After we have initialized Firebase and created a reference to our database…
 // When the comment form is submitted (the user hits enter)
-$('#reservation-form').on('submit', function (e) {
+//$('#reservation-form').on('submit', function (e) {
   // prevent the page from reloading
-  e.preventDefault();
+ // e.preventDefault();
   // grab user's comment from input field
-  var reservationData = $('#reservation-day').val();
+  //var reservationData = $('#reservation-day').val();
 
   // clear the user's comment from the input (for UX purposes)
-  $('#reservation-day').val('')
+  //$('#reservation-day').val('')
   // create a section for comments data in your db
-  var reservations = database.ref('reservation-day');
+  //var reservations = database.ref('reservation-day');
   // use the set method to save data to the comments
-  reservations.push({
-    reservation-day: reservation-day
+  //reservations.push({
+    //reservation-day: reservation-day
 
-  });
-});
+  //});
+//});
 
 
 
@@ -58,47 +59,49 @@ $('#reservation-form').on('submit', function (e) {
 
 
 // 3. Retrieve comments data when page loads and when comments are added/updated
-function getReservations() {
-  database.ref('comments').on('value', function (results) {
-    var allReservations = results.val();
-    var reservations = [];
-    for (var item in allReservations) {
-      var reserve = {
-        reservation: allReservations[item].reservation,
+//function getReservations() {
+  //database.ref('comments').on('value', function (results) {
+    //var allReservations = results.val();
+    //var reservations = [];
+    //for (var item in allReservations) {
+      //var reserve = {
+        //reservation: allReservations[item].reservation,
       
-        reservation-day: item
-      };
-      var source = $("#reservation-template").html();
-      var template = Handlebars.compile(source);
-      var reservationListElement = template(reservation);
-      reservations.push(reservationListElement)
-    }
+        //reservation-day: item
+      //};
+      //var source = $("#reservation-template").html();
+      //var template = Handlebars.compile(source);
+      //var reservationListElement = template(reservation);
+      //reservations.push(reservationListElement)
+    //}
     // remove all list items from DOM before appending list items
-    $('#reservation-day').empty()
-    $('#reservation-name').empty()
+    //$('#reservation-day').empty()
+    //$('#reservation-name').empty()
     // append each reservation to the list of reservations in the DOM
-    for (var i in reservations) {
-      $('#reservation-day ul').append(reservation-day[i]);
+    //for (var i in reservations) {
+      //$('#reservation-day ul').append(reservation-day[i]);
 
-       $('#reservation-day2 li').html(reservation-day.val());
-        $('#reservation-name2 li').html(reservation-name.val());
-    }
-  });
-}
+       //$('#reservation-day2 li').html(reservation-day.val());
+    //    $('#reservation-name2 li').html(reservation-name.val());
+   // }
+  //});
+//
 
 
+$('#reservation-form').on('click', function (getReservations) {
+};
 
-$('#reservation-day').on('click', '.delete', function (e) {
+//$('#reservation-day').on('click', '.delete', function (e) {
   // Get the ID for the comment we want to update
-  var id = $(e.target).parent().data('reservation-day')
+  //var id = $(e.target).parent().data('reservation-day')
 
   // find comment whose objectId is equal to the id we're searching with
-  var resReference = database.ref('reservation-day/' + reservation-day)
+  //var resReference = database.ref('reservation-day/' + reservation-day)
 
 
   // Use remove method to remove the comment from the database
-  resReference.remove()
-});
+  //resReference.remove()
+//});
   // Use reference to database to listen for changes in comments data
 
     // Get all comments stored in the results we received back from Firebase
@@ -174,7 +177,7 @@ function initMap() {
 initMap();
 
 
-// 1. Initialize Firebase
+
 
 
 
