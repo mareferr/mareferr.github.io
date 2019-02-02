@@ -6988,6 +6988,8 @@ $('#reservation-form').on('submit', function (e) {
 function getReservations() {
   database.ref('comments').on('value', function (results) {
     var allReservations = results.val();
+     var reservationName = $('#reservation-name').val();
+  var reservationDay = $('#reservation-day').val();
     var reservations = [];
     for (var item in allReservations) {
       var reserve = {
@@ -7005,11 +7007,14 @@ function getReservations() {
     $('#reservation-day').empty()
     // append each reservation to the list of reservations in the DOM
     for (var i in reservations) {
-      $('#reservation-day ul').append(reservation-day[i])
+      $('#reservation-day ul').append(reservation-day[i]);
+
+            $('#reservation-day2 li').html(reservationDay);
     }
 
      for (var i in reservations) {
-      $('#reservation-name ul').append(reservation-name[i])
+      $('#reservation-name ul').append(reservation-name[i]);
+      $('#reservation-name2 li').html(reservationName);
     }
   });
 }
@@ -7085,26 +7090,32 @@ $('#reservation-name').on('click', '.delete', function (e) {
 
   // Update likes property in database
 
+// initialize the configuration of map
 function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 40.8054491, lng: -73.9654415},
-    zoom: 10,
-    scrollwheel: false
-  });
+  // use JS's built-in Navigator to get user's lat/lng coordinates
+  navigator.geolocation.getCurrentPosition(function(position) {
+    // create an object to store lat/lng data
+    var userLocation = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude
+    };
+       // create a new instance of a map
+    // configure map with options object
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: userLocation,
+      zoom: 10,
+      scrollwheel: false
+    });
 
-  var marker = new google.maps.Marker({
-    position: {lat: 40.8054491, lng: -73.9654415},
-    map: map,
-    title: 'Monks Café'
+    // use Marker constructor to add a marker to map
+    var marker = new google.maps.Marker({
+      position: userLocation,
+      map: map,
+      title: 'User Location'
+    });
+
   });
 }
 
-
-
 initMap();
-
-
-
-v
-
 
