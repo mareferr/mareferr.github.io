@@ -128,8 +128,8 @@ function getReservations() {
     $('.reservationName').empty()
      $('.reservationDay').empty()
     // append each comment to the list of comments in the DOM
-    for (var i in reservations) {
-      $('.reservations').append(reservations[i])
+    for (var i in reservationData) {
+      $('.reservations').append([i])
     }
   });
 }
