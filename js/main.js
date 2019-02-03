@@ -88,8 +88,16 @@ var database = firebase.database();
 //
 
 
-$('#reservation-form').on('click', function (getReservations) {
-};
+$('#reservation-form').on('click', function (e) {
+
+  e.preventDefault();
+
+  var day = $("#reservation-day").val();
+  var name = $("#reservation-name").val();
+
+    $("#reservationDay").text(day);
+     $("#reservationName").text(name);
+});
 
 //$('#reservation-day').on('click', '.delete', function (e) {
   // Get the ID for the comment we want to update
