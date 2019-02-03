@@ -100,10 +100,10 @@ $('#reservation-form').on('click', function (e) {
     // remove all list items from DOM before appending list items
 
 
-    $('#reservationDay').empty()
-    $('#reservationName').empty()
+    $('#reservationDay').empty();
+    $('#reservationName').empty();
 
-    
+
     $("#rDay").html(day);
      $("#rName").html(name);
   
