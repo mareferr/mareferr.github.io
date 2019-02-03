@@ -103,12 +103,13 @@ $('#reservation-form').on('click', function (e) {
     $('#reservationDay').empty();
     $('#reservationName').empty();
 
+ $('#rName td').append(name);
+         $('#rDay td').append(day);
 
     $("#rDay").html(day);
      $("#rName").html(name);
   
-      $('#rName').append('<tr><td>' + name + '</td>');
-         $('#rDay').append('<td>' + day + '</td></tr>');
+     
 });
 
 //$('#reservation-day').on('click', '.delete', function (e) {
