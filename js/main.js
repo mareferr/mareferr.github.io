@@ -24,40 +24,12 @@
 
  
 
-  // By default, a form submit reloads the DOM which will subsequently reload all our JS
-
-  // After we have initialized Firebase and created a reference to our database…
-// When the comment form is submitted (the user hits enter)
-//$('#reservation-form').on('submit', function (e) {
-  // prevent the page from reloading
- // e.preventDefault();
-  // grab user's comment from input field
-  //var reservationData = $('#reservation-day').val();
-
-  // clear the user's comment from the input (for UX purposes)
-  //$('#reservation-day').val('')
-  // create a section for comments data in your db
-  //var reservations = database.ref('reservation-day');
-  // use the set method to save data to the comments
-  //reservations.push({
-    //reservation-day: reservation-day
-
-  //});
-//});
+ 
 
 
+ 
 
-  // To avoid this, we use preventDefault()
-
-  // Grab user's comment from input field
-
-  // Clear the user's comment from the input (for UX purposes)
-
-  // Create a section for comments data in your db
-
-  // Use the set method to save data to the comments
-
-
+//Get user's input and push it into the database
 
 var submitReservation = function(e) {
 
@@ -70,25 +42,15 @@ var submitReservation = function(e) {
   var day = $("#reservationDay").val();
 
 
-  // Push a new recommendation to the database using those values
+  // Push a new reservation to the database using those values
   reservationData.push({
     "name": name,
     "day": day
   });
 
 
-  // grab user's comment from input field
-//var source = $('#reservation-template').html();
-//var template = Handlebars.compile(source);
 
-  // clear the user's comment from the input (for UX purposes)
-
-
-  //var userInput = {
-        //day: e.item,
-        //name: e.name,
-      
-       //};
+     
 
 
 
@@ -98,13 +60,6 @@ var submitReservation = function(e) {
 
 
 
-  // create a section for comments data in your db
-  //var reservationReference = database.ref('reservationData');
-  // use the set method to save data to the comments
-  //reservationReference.push({
-    //name: name,
-    //day: day
-  //});
 
   // When the window is fully loaded, call this function.
 // Note: because we are attaching an event listener to a particular HTML element
@@ -113,15 +68,15 @@ var submitReservation = function(e) {
 // will run when the submit button is clicked.
 $(window).load(function () {
 
-  // Find the HTML element with the id recommendationForm, and when the submit
-  // event is triggered on that element, call submitRecommendation.
+  // Find the HTML element with the id reservationForm, and when the submit
+  // event is triggered on that element, call submitReservation.
   $("#reservationForm").submit(submitReservation);
 
 });
 
 
 
-
+//Get reservation data and put it onto "existing reservation section"
 function getReservations() {
   database.ref('reservationData').on('value', function (results) {
     var allReservations = results.val();
@@ -140,7 +95,7 @@ function getReservations() {
     // remove all list items from DOM before appending list items
     $('.reservationName').empty()
      $('.reservationDay').empty()
-    // append each comment to the list of comments in the DOM
+    // append each comment to the list of reservations in the DOM
     for (var i in reservationData) {
       $('.reservations').append([i])
     }
