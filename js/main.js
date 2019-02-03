@@ -98,18 +98,11 @@ $('#reservation-form').on('click', function (e) {
   var name = $("#reservationName").val();
 
     // remove all list items from DOM before appending list items
-
-
-    $('#reservationDay').empty();
-    $('#reservationName').empty();
-
- $('#rName td').append(name);
-         $('#rDay td').append(day);
+    $('#reservationDay').empty()
+    $('#reservationName').empty()
 
     $("#rDay").html(day);
      $("#rName").html(name);
-  
-     
 });
 
 //$('#reservation-day').on('click', '.delete', function (e) {
