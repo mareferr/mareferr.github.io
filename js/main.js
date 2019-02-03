@@ -15,7 +15,7 @@
 
   firebase.initializeApp(config);
 
-  var database = firebase.database().ref();
+  var database = firebase.database().ref("reservationData");
 
 // 2. Connect to your Firebase application using your reference URL
 
@@ -59,39 +59,67 @@
 
 
 
+var submitReservation = function(e) {
 
-
-$('#reservationForm').on('submit', function (e) {
   // prevent the page from reloading
   e.preventDefault();
-  // grab user's comment from input field
 
-  var source = $('#reservation-template').html();
-var template = Handlebars.compile(source);
+
+    // Get input values from each of the form elements
+  var name = $("#reservationName").val();
+  var day = $("#reservationDay").val();
+
+
+  // Push a new recommendation to the database using those values
+  reservationData.push({
+    "name": name,
+    "day": day
+  });
+
+
+  // grab user's comment from input field
+//var source = $('#reservation-template').html();
+//var template = Handlebars.compile(source);
 
   // clear the user's comment from the input (for UX purposes)
 
 
-  var userInput = {
-        day: e.item,
-        name: e.name,
+  //var userInput = {
+        //day: e.item,
+        //name: e.name,
       
-       };
+       //};
 
-var newListItemHTML = template(userInput);
 
-  $('.reservations').append(newListItemHTML);
+
+//var newListItemHTML = template(userInput);
+
+  //$('.reservations').append(newListItemHTML);
 
 
 
   // create a section for comments data in your db
-  var reservationReference = database.ref('reservationData');
+  //var reservationReference = database.ref('reservationData');
   // use the set method to save data to the comments
-  reservationReference.push({
-    name: name,
-    day: day
-  });
+  //reservationReference.push({
+    //name: name,
+    //day: day
+  //});
+
+  // When the window is fully loaded, call this function.
+// Note: because we are attaching an event listener to a particular HTML element
+// in this function, we can't do that until the HTML element in question has
+// been loaded. Otherwise, we're attaching our listener to nothing, and no code
+// will run when the submit button is clicked.
+$(window).load(function () {
+
+  // Find the HTML element with the id recommendationForm, and when the submit
+  // event is triggered on that element, call submitRecommendation.
+  $("#reservationForm").submit(submitReservation);
+
 });
+
+
 
 
 function getReservations() {
