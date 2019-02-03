@@ -12,9 +12,11 @@
     <div id="content">
       <div id="masthead">
     <br />
-    <img src="images/toms-restaurant.jpg" width="500" align="left" />
+    <img src="images/toms-restaurant.jpg" height="100" align="left" style="margin:0;padding:0;" />
       <span style="display:inline!important;text-align:right!important;color:#000000;"><h1>Monk's Cafe</h1>
-       "The Coffee Shop"</span>
+       "The Coffee Shop"<br /><
+Open Monday-Sunday, 5am - 11pm
+     </span>
 </div>
  <br clear="all" />
 
@@ -31,9 +33,9 @@ Make a Reservation
    
     <form id="reservation-form">
     <label>Name</label>
-    <input type="text" placeholder="Your Name" id="reservation-name"><br />
+    <input type="text" placeholder="Your Name" id="reservationName"><br />
      <label>Day</label>
- <input type="text" placeholder="reservation-day" id="reservation-day"><br />
+ <input type="text" placeholder="reservation-day" id="reservationDay"><br />
   </ul>
     <button>Confirm Reservation</button>
 </form>
@@ -53,9 +55,9 @@ Existing Reservations
 </tr>
 
 <script id="reservation-template" type="text/x-handlebars-template">
-    <tr><td id="reservationName">
+    <tr><td id="rName">
  </td>
- <td id="reservationDay">
+ <td id="rDay">
       </td>
   </tr>
 </script>
