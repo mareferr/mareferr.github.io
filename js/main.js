@@ -3,21 +3,23 @@
 
 
 
-  var config = {
-    apiKey: "AIzaSyDq0KHo9QZ4l1WNXsnisMeO5ozVSRdIxhA",
-    authDomain: "reservation-site-d9a66.firebaseapp.com",
-    databaseURL: "https://reservation-site-d9a66.firebaseio.com",
-    projectId: "reservation-site-d9a66",
-    storageBucket: "reservation-site-d9a66.appspot.com",
-    messagingSenderId: "494185401962"
-  };
-  firebase.initializeApp(config);
+  //var config = {
+    //apiKey: "AIzaSyDq0KHo9QZ4l1WNXsnisMeO5ozVSRdIxhA",
+    //authDomain: "reservation-site-d9a66.firebaseapp.com",
+    //databaseURL: "https://reservation-site-d9a66.firebaseio.com",
+    //projectId: "reservation-site-d9a66",
+    //storageBucket: "reservation-site-d9a66.appspot.com",
+    //messagingSenderId: "494185401962"
+  //};
+
+  //var database = firebase.database();
+
+  //firebase.initializeApp(config);
 
 
 // 2. Connect to your Firebase application using your reference URL
 
 // Connect to Database
-var database = firebase.database();
 
 
  
