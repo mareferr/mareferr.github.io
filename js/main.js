@@ -49,14 +49,14 @@ var submitReservation = function(e) {
   });
 
 
-
+ // remove all list items from DOM before appending list items
+    $('.reservationName').empty()
+     $('.reservationDay').empty()
+    // append each comment to the list of reservations in the DOM
+    for (var i in reservationData) {
+      $('.reservations').append([i]);
+    }
      
-
-
-
-//var newListItemHTML = template(userInput);
-
-  //$('.reservations').append(newListItemHTML);
 
 
 
