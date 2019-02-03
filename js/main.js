@@ -97,8 +97,8 @@ $('#reservation-form').on('click', function (e) {
   var day = $("#reservation-day").val();
   var name = $("#reservation-name").val();
 
-    $("#reservationDay").text(day);
-     $("#reservationName").text(name);
+    $("#reservationDay").html(day);
+     $("#reservationName").html(name);
 });
 
 //$('#reservation-day').on('click', '.delete', function (e) {
@@ -158,33 +158,26 @@ $('#reservation-form').on('click', function (e) {
 
 // initialize the configuration of map
 function initMap() {
-  // use JS's built-in Navigator to get user's lat/lng coordinates
-  navigator.geolocation.getCurrentPosition(function(position) {
-    // create an object to store lat/lng data
-    var userLocation = {
-      lat: position.coords.latitude,
-      lng: position.coords.longitude
-    };
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 40.8054491, lng: -73.9654415},
+    zoom: 10,
+    scrollwheel: false
+  });
+
 
     // create a new instance of a map
     // configure map with options object
-    var map = new google.maps.Map(document.getElementById('map'), {
-      center: userLocation,
-      zoom: 10,
-      scrollwheel: false
-    });
+  
 
     // use Marker constructor to add a marker to map
     var marker = new google.maps.Marker({
-      position: userLocation,
+  position: {lat: 40.8054491, lng: -73.9654415},
       map: map,
-      title: 'User Location'
+ title: 'Monks Café'
     });
-
-  });
 }
 
-initMap();
+
 
 
 
