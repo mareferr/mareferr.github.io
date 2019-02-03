@@ -30,15 +30,23 @@ Make a Reservation
 </th>
 <tr>
   <td valign="top">
-   
-    <form id="reservation-form">
+
+    <form id="reservationForm">
     <label>Name</label>
     <input type="text" placeholder="Your Name" id="reservationName"><br />
-     <label>Day</label>
- <input type="text" placeholder="reservation-day" id="reservationDay"><br />
-  </ul>
-    <button>Confirm Reservation</button>
+ 
+
+
+
+    <label>Day</label>
+<select class="reservationDay">
+<option value="Feb162109">February 16, 2019</option>
+<option value="Feb182109">February 19, 2019</option>
+</select>
+
+   <button>Confirm Reservation</button>
 </form>
+
 
   </td>
 </tr>
@@ -53,15 +61,32 @@ Existing Reservations
   <td valign="top"><strong>Name</strong></td>
   <td valign="top"><strong>Day</strong></td>
 </tr>
+<td>
 
-<script id="reservation-template" type="text/x-handlebars-template">
-    <tr><td id="rName">
- </td>
- <td id="rDay">
-      </td>
-  </tr>
-</script>
 
+  <ul class="reservations">
+    <!-- Step 1: Create a handlebars template for a list item with the following format:
+        <li>{{item}} - ${{cost}}</li> -->
+  <!-- Step 1: -->
+
+   <script id="reservations-template" type="text/x-handlebars-template">
+    <li data-id="{{name}}">
+      <span id="name">{{name}}</span>
+     
+    
+    </li>
+
+     <li data-id="{{day}}">
+      <span id="day">{{day}}</span>
+     
+    
+    </li>
+  </script>
+
+
+</ul>
+</td>    
+ </tr>
 </table>
 
 </div>
@@ -86,5 +111,8 @@ Existing Reservations
 </tr>
 </table>
 </div>
+<script src="js/jquery-3.0.0.js"></script>
+  <script src="js/handlebars-v4.0.5.js"></script>
+  <script src="js/main.js"></script>
     </body>
   </html>

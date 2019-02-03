@@ -3,19 +3,19 @@
 
 
 
-  //var config = {
-    //apiKey: "AIzaSyDq0KHo9QZ4l1WNXsnisMeO5ozVSRdIxhA",
-    //authDomain: "reservation-site-d9a66.firebaseapp.com",
-    //databaseURL: "https://reservation-site-d9a66.firebaseio.com",
-    //projectId: "reservation-site-d9a66",
-    //storageBucket: "reservation-site-d9a66.appspot.com",
-    //messagingSenderId: "494185401962"
-  //};
+  var config = {
+    apiKey: "AIzaSyDq0KHo9QZ4l1WNXsnisMeO5ozVSRdIxhA",
+    authDomain: "reservation-site-d9a66.firebaseapp.com",
+    databaseURL: "https://reservation-site-d9a66.firebaseio.com",
+    projectId: "reservation-site-d9a66",
+    storageBucket: "reservation-site-d9a66.appspot.com",
+    messagingSenderId: "494185401962"
+  };
 
-  //var database = firebase.database();
 
-  //firebase.initializeApp(config);
+  firebase.initializeApp(config);
 
+  var database = firebase.database();
 
 // 2. Connect to your Firebase application using your reference URL
 
@@ -89,22 +89,92 @@
   //});
 //
 
+$('#reservationForm').on('submit', function (e) {
+  // prevent the page from reloading
+  e.preventDefault();
+  // grab user's comment from input field
+  var userInput1 = $('#reservationDay').val();
+   var userInput2 = $('#reservationName').text();
+  // clear the user's comment from the input (for UX purposes)
+  $('#reservationDay').text('')
+   $('#reservationName').val('')
 
-$('#reservation-form').on('click', function (e) {
+  // create a section for comments data in your db
+  var reservationReference = database.ref('reservationData');
+  // use the set method to save data to the comments
+  reservationReference.push({
+    name: name,
+    day: day
+  });
+});
+
+
+function getReservations() {
+  database.ref('reservationData').on('value', function (results) {
+    var allReservations = results.val();
+    var reservations = [];
+    for (var item in allReservations) {
+      var res = {
+        name: name,
+        day: day
+      
+      };
+      var source = $("#reservation-template").html();
+      var template = Handlebars.compile(source);
+      var resListElement = template(res);
+      reservations.push(resListElement)
+    }
+    // remove all list items from DOM before appending list items
+    $('.reservationName').empty()
+     $('.reservationDay').empty()
+    // append each comment to the list of comments in the DOM
+    for (var i in reservations) {
+      $('.reservations').append(reservations[i])
+    }
+  });
+}
+
+
+
+
+
+
+
+//$('#reservation-name').on('submit', function (e) {
+
+  //e.preventDefault();
+
+  // var userInput = reservationName.val(); 
+
+
+      //var newListItemHTML = template(userInput);
+
+
+
+
+//});
+
+
+
+$('.reservation-day li').on('click', function (e) {
 
   e.preventDefault();
 
-  var day = $("#reservationDay").val();
-  var name = $("#reservationName").val();
+   var day = reservationDay.text(); 
+var name = reservationName.val();
 
-    // remove all list items from DOM before appending list items
-    $('#reservationDay').empty();
-    $('#reservationName').empty();
+  $(.reservationDay).text(day);
+      $(.reservationName).html(name);
+      
+      };
 
-    $("#rDay").html(day);
-     $("#rName").html(name);
+
+      var newListItemHTML = template(userInput);
+
+  $('.reservations').append(newListItemHTML);
+
+
 });
-
 //$('#reservation-day').on('click', '.delete', function (e) {
   // Get the ID for the comment we want to update
   //var id = $(e.target).parent().data('reservation-day')
