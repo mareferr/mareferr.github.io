@@ -156,25 +156,6 @@ function getReservations() {
 
 
 
-$('.reservation-day li').on('click', function (e) {
-
-  e.preventDefault();
-
-   var day = reservationDay.text(); 
-var name = reservationName.val();
-
-  $(.reservationDay).text(day);
-      $(.reservationName).html(name);
-      
-      };
-
-
-      var newListItemHTML = template(userInput);
-
-  $('.reservations').append(newListItemHTML);
-
-
-});
 //$('#reservation-day').on('click', '.delete', function (e) {
   // Get the ID for the comment we want to update
   //var id = $(e.target).parent().data('reservation-day')
