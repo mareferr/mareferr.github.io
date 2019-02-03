@@ -60,34 +60,6 @@
 
 
 
-// 3. Retrieve comments data when page loads and when comments are added/updated
-//function getReservations() {
-  //database.ref('comments').on('value', function (results) {
-    //var allReservations = results.val();
-    //var reservations = [];
-    //for (var item in allReservations) {
-      //var reserve = {
-        //reservation: allReservations[item].reservation,
-      
-        //reservation-day: item
-      //};
-      //var source = $("#reservation-template").html();
-      //var template = Handlebars.compile(source);
-      //var reservationListElement = template(reservation);
-      //reservations.push(reservationListElement)
-    //}
-    // remove all list items from DOM before appending list items
-    //$('#reservation-day').empty()
-    //$('#reservation-name').empty()
-    // append each reservation to the list of reservations in the DOM
-    //for (var i in reservations) {
-      //$('#reservation-day ul').append(reservation-day[i]);
-
-       //$('#reservation-day2 li').html(reservation-day.val());
-    //    $('#reservation-name2 li').html(reservation-name.val());
-   // }
-  //});
-//
 
 $('#reservationForm').on('submit', function (e) {
   // prevent the page from reloading
@@ -96,8 +68,8 @@ $('#reservationForm').on('submit', function (e) {
   var userInput1 = $('#reservationDay').val();
    var userInput2 = $('#reservationName').text();
   // clear the user's comment from the input (for UX purposes)
-  $('#reservationDay').text('')
-   $('#reservationName').val('')
+  $('#reservationDay').text('');
+   $('#reservationName').val('');
 
   // create a section for comments data in your db
   var reservationReference = database.ref('reservationData');
