@@ -15,7 +15,7 @@
 
   firebase.initializeApp(config);
 
-  var database = firebase.database();
+  var database = firebase.database().ref();
 
 // 2. Connect to your Firebase application using your reference URL
 
