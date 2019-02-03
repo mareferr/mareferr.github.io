@@ -65,11 +65,24 @@ $('#reservationForm').on('submit', function (e) {
   // prevent the page from reloading
   e.preventDefault();
   // grab user's comment from input field
-  var userInput1 = $('#reservationDay').val();
-   var userInput2 = $('#reservationName').text();
+
+  var source = $('#reservation-template').html();
+var template = Handlebars.compile(source);
+
   // clear the user's comment from the input (for UX purposes)
-  $('#reservationDay').text('');
-   $('#reservationName').val('');
+
+
+  var userInput = {
+        day: e.item,
+        name: e.name,
+      
+       };
+
+var newListItemHTML = template(userInput);
+
+  $('.reservations').append(newListItemHTML);
+
+
 
   // create a section for comments data in your db
   var reservationReference = database.ref('reservationData');
