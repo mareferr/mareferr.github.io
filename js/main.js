@@ -28,6 +28,11 @@
   // grab user's comment from input field
   var userInputName = $('#reservationName').val();
     var userInputDay = $('#reservationDay').val();
+
+
+            $('#name').html(e.userInputName);
+              $('#day').html(e.userInputDay);
+    
   // clear the user's comment from the input (for UX purposes)
   $('#reservationName').val('')
    $('#reservationDay').val('')
