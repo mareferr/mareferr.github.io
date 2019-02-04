@@ -78,6 +78,21 @@ function getReservations() {
 
 // When page loads, call getReservations function
 getReservations();
+
+$('.reservations').on('click', '.delete', function (e) {
+  // Get the ID for the comment we want to update
+  var id = $(e.target).parent().data('id')
+
+  // find comment whose objectId is equal to the id we're searching with
+  var resReference = database.ref('reservationData/' + id)
+
+
+  // Use remove method to remove the comment from the database
+  resReference.remove()
+});
+
+
+
 //Get user's input and push it into the database
 
 //var submitReservation = function(e) {
