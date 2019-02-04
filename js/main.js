@@ -26,17 +26,17 @@
   // prevent the page from reloading
   e.preventDefault();
   // grab user's comment from input field
-  var userInput1 = $('#name').val();
-    var userInput2 = $('#day').val();
+  var userInputName = $('#reservationName').val();
+    var userInputDay = $('#reservationDay').val();
   // clear the user's comment from the input (for UX purposes)
-  $('#name').val('')
-   $('#day').val('')
+  $('#reservationName').val('')
+   $('#reservationDay').val('')
   // create a section for comments data in your db
   var resReference = database.ref('reservationData');
   // use the set method to save data to the comments
   resReference.push({
-    name: userInput1,
-    day: userInput2
+    name: userInputName,
+    day: userInputDay
   });
 });
 
