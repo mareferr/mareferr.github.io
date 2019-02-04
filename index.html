@@ -13,14 +13,14 @@
     <div id="content">
       <div id="masthead">
     <br />
-    <img src="images/monks-cafe.jpg" style="max-width:100%;width:600px;" align="left" style="margin:0;padding:0;" />
+    <img src="images/monks-cafe.jpg" style="max-width:100%;width:900px;" align="left" style="margin:0;padding:0;" />
   
 </div>
  <br clear="all" />
 
           <h2 align="center">Reservations</h2>
-          <div align="center" width="850px">
-          <table width="400" border="0" class="tableLeft">
+          <div align="center" width="650px">
+          <table width="300" border="0" class="tableLeft">
 
 <th>
 Make a Reservation
@@ -39,8 +39,8 @@ Make a Reservation
     <label>Day</label>
 <select id="reservationDay">
   <option value="">Select a date</option>
-<option value="Feb162109">February 16, 2019</option>
-<option value="Feb182109">February 19, 2019</option>
+<option value="Feb. 16, 2019">February 16, 2019</option>
+<option value="Feb. 19, 2019">February 19, 2019</option>
 </select>
 
    <button>Confirm Reservation</button>
@@ -51,7 +51,7 @@ Make a Reservation
 </tr>
 </table>
 
-      <table width="400" border="0" class="tableRight">
+      <table width="300" border="0" class="tableRight">
  <th>
 Existing Reservations
 
@@ -70,13 +70,13 @@ Existing Reservations
 
    <script id="reservations-template" type="text/x-handlebars-template">
     <li data-id="{{reservationId}}">
-      <span id="name">{{name}}</span>
+      <span>{{name}}</span>
      
     
     </li>
 
      <li data-id="{{reservationId}}">
-      <span id="day">{{day}}</span>
+      <span>{{day}}</span>
      
     
     </li>
