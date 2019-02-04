@@ -67,10 +67,10 @@ function getReservations() {
       // Pass the data for this comment (context) into the template
       var resListElement = template(context);
       // push newly created element to array of comments
-      reservationData.push(resListElement)
-     }
+      reservationData.push(resListElement);
+
     // remove all list items from DOM before appending list items
-    $('.reservationData').empty()
+    $('.reservationData').empty();
     // append each comment to the list of comments in the DOM
     for (var i in reservationData) {
       $('.reservationData').append(reservationData[i])
