@@ -15,47 +15,96 @@
 
   firebase.initializeApp(config);
 
-  var database = firebase.database().ref("reservationData");
+  var database = firebase.database();
 
 // 2. Connect to your Firebase application using your reference URL
 
 // Connect to Database
 
 
- 
-
- 
-
-
- 
-
-//Get user's input and push it into the database
-
-var submitReservation = function(e) {
-
+ $('#reservationForm').on('submit', function (e) {
   // prevent the page from reloading
   e.preventDefault();
+  // grab user's comment from input field
+  var userInput1 = $('#name').val();
+    var userInput2 = $('#day').val();
+  // clear the user's comment from the input (for UX purposes)
+  $('#name').val('')
+   $('#day').val('')
+  // create a section for comments data in your db
+  var resReference = database.ref('reservationData');
+  // use the set method to save data to the comments
+  resReference.push({
+    name: userInput1,
+    day: userInput2
+  });
+});
+
+ 
+function getReservations() {
+  database.ref('reservationData').on('value', function (results) {
+    // Get all comments stored in the results we received back from Firebase
+    var allReservations = results.val();
+    // Set an empty array where we can add all comments we'll append to the DOM
+    var reservationData = [];
+    // iterate (loop) through all comments coming from database call
+    for (var item in allReservations) {
+      // Create an object literal with the data we'll pass to Handlebars
+      var context = {
+        name: allReservations[item].name,
+        day: allReservations[item].day,
+        reservationId: item
+       };
+      // Get the HTML from our Handlebars comment template
+      var source = $("#reservation-template").html();
+      // Compile our Handlebars template
+      var template = Handlebars.compile(source);
+      // Pass the data for this comment (context) into the template
+      var resListElement = template(context);
+      // push newly created element to array of comments
+      reservationData.push(resListElement)
+     }
+    // remove all list items from DOM before appending list items
+    $('.reservationData').empty()
+    // append each comment to the list of comments in the DOM
+    for (var i in reservationData) {
+      $('.reservationData').append(reservationData[i])
+    }
+  });
+}
+
+ 
+// retrieve reservations data when page loads and when comments are added/updated
+
+// When page loads, call getReservations function
+getReservations();
+//Get user's input and push it into the database
+
+//var submitReservation = function(e) {
+
+  // prevent the page from reloading
+  //e.preventDefault();
 
 
     // Get input values from each of the form elements
-  var name = $("#reservationName").val();
-  var day = $("#reservationDay").val();
+  //var name = $("#reservationName").val();
+  //var day = $("#reservationDay").val();
 
 
   // Push a new reservation to the database using those values
-  reservationData.push({
-    "name": name,
-    "day": day
-  });
+  //reservationData.push({
+   // "name": name,
+   // "day": day
+  //});
 
 
  // remove all list items from DOM before appending list items
-    $('.reservationName').empty()
-     $('.reservationDay').empty()
+   // $('.reservationName').empty()
+     //$('.reservationDay').empty()
     // append each comment to the list of reservations in the DOM
-    for (var i in reservationData) {
-      $('.reservations').append([i]);
-    }
+    //for (var i in reservationData) {
+      //$('.reservations').append([i]);
+    //}
      
 
 
