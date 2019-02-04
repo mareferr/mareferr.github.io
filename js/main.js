@@ -21,7 +21,8 @@
 
 // Connect to Database
 
-function getTime() {
+$(document).ready(function ()  
+{  
   var startTime="17:00:00"; // or 5:00
  var endTime ="21:00:00"  // or 9:00 
 var dt = new Date();
@@ -32,7 +33,7 @@ if(time >startTime || time < endTiime){
 }else{
  $("#time").html("Closed Now");
 }
-}
+});
 
 getTime();
 
@@ -90,7 +91,7 @@ function getReservations() {
     for (var i in reservationData) {
       $('.reservationData').append(reservationData[i])
     }
-  });
+  };
 }
 
  
@@ -115,34 +116,6 @@ $('.reservations').on('click', '.delete', function (e) {
 
 
 
-//Get user's input and push it into the database
-
-//var submitReservation = function(e) {
-
-  // prevent the page from reloading
-  //e.preventDefault();
-
-
-    // Get input values from each of the form elements
-  //var name = $("#reservationName").val();
-  //var day = $("#reservationDay").val();
-
-
-  // Push a new reservation to the database using those values
-  //reservationData.push({
-   // "name": name,
-   // "day": day
-  //});
-
-
- // remove all list items from DOM before appending list items
-   // $('.reservationName').empty()
-     //$('.reservationDay').empty()
-    // append each comment to the list of reservations in the DOM
-    //for (var i in reservationData) {
-      //$('.reservations').append([i]);
-    //}
-     
 
 
 
@@ -150,108 +123,6 @@ $('.reservations').on('click', '.delete', function (e) {
 
 
 
-//Get reservation data and put it onto "existing reservation section"
-//function getReservations() {
-  //database.ref('reservationData').on('value', function (results) {
-    //var allReservations = results.val();
-    //var reservations = [];
-    //for (var item in allReservations) {
-      //var res = {
-        //name: name,
-        //day: day
-      
-      //};
-     // var source = $("#reservation-template").html();
-      //var template = Handlebars.compile(source);
-     // var resListElement = template(res);
-      //reservations.push(resListElement)
-    
-    // remove all list items from DOM before appending list items
-    //$('.reservationName').empty()
-     //$('.reservationDay').empty()
-    // append each comment to the list of reservations in the DOM
-    //for (var i in reservationData) {
-      //$('.reservations').append([i])
-    //}
-  //});
-//}
-
-
-
-
-
-
-
-//$('#reservation-name').on('submit', function (e) {
-
-  //e.preventDefault();
-
-  // var userInput = reservationName.val(); 
-
-
-      //var newListItemHTML = template(userInput);
-
-
-
-
-//});
-
-
-
-//$('#reservation-day').on('click', '.delete', function (e) {
-  // Get the ID for the comment we want to update
-  //var id = $(e.target).parent().data('reservation-day')
-
-  // find comment whose objectId is equal to the id we're searching with
-  //var resReference = database.ref('reservation-day/' + reservation-day)
-
-
-  // Use remove method to remove the comment from the database
-  //resReference.remove()
-//});
-  // Use reference to database to listen for changes in comments data
-
-    // Get all comments stored in the results we received back from Firebase
-
-    // Set an empty array where we can add new comment element
-
-    // Iterate (loop) through all comments coming from database call
-
-      // Create an object literal with the data we'll pass to Handlebars
-
-      // Get the HTML from our Handlebars comment template
-
-      // Compile our Handlebars template
-
-      // Pass the data for this comment (context) into the template
-
-      // Push newly created element to array of comments
-
-    // Remove all list items from DOM before appending list items
-
-    // Append each comment to the list of comments in the DOM
-
-
-
-// 4). When page loads, get comments
-
-
-
-// 5). Click event to delete comments
-
-  // Find comment whose objectId is equal to the id we're searching with
-
-
-
-// 6). Click event to like comments
-
-  // Find comment whose objectId is equal to the id we're searching with
-
-  // Get number of likes from HTML
-
-  // Convert likes to a number and add a like
-
-  // Update likes property in database
 
 // initialize the configuration of map
 function initMap() {
