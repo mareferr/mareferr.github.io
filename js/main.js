@@ -79,19 +79,21 @@ function getReservations() {
 }
 
  
-// retrieve reservations data when page loads and when comments are added/updated
+
 
 // When page loads, call getReservations function
 getReservations();
 
 $('.reservations').on('click', '.delete', function (e) {
-  // Get the ID for the comment we want to update
+  // Get the ID for the reservation we want to delete
   var id = $(e.target).parent().data('id')
 
-  // find comment whose objectId is equal to the id we're searching with
+  // find reservation whose objectId is equal to the id we're searching with
   var resReference = database.ref('reservationData/' + id)
 
-
+//remove reservation from web page
+            $(this).html('');
+          
   // Use remove method to remove the comment from the database
   resReference.remove()
 });
