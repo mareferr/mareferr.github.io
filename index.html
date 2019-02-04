@@ -14,7 +14,19 @@
       <div id="masthead">
     <br />
     <img src="images/monks-cafe.jpg" style="max-width:100%;width:900px;" align="left" style="margin:0;padding:0;" />
-  
+  <br />
+  Hours: Everyday from 5am to 9pm<br />
+  <div id="time"></div>
+  var startTime="17:00:00"; // or 5:00
+ var endTime ="21:00:00"  // or 9:00 
+var dt = new Date();
+var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+
+if(time >startTime || time < endTiime){
+ $("#time").html("Open Now");
+}else{
+ $("#time").html("Closed Now);
+}
 </div>
  <br clear="all" />
 
@@ -66,18 +78,18 @@ Existing Reservations
   <ul class="reservations">
     <!-- Step 1: Create a handlebars template for a list item with the following format:
         <li>{{item}} - ${{cost}}</li> -->
-  <!-- Step 1: -->
+
 
    <script id="reservations-template" type="text/x-handlebars-template">
     <li data-id="{{reservationId}}">
-      <span>{{name}}</span><br />
-     <i class="fa fa-trash delete"></i>
+      <span id="name">{{name}}</span><br />
+     <i class="fa fa-trash delete">delete</i>
     
     </li>
 
      <li data-id="{{reservationId}}">
-      <span>{{day}}</span><br />
-     <i class="fa fa-trash delete"></i>
+      <span id="day">{{day}}</span><br />
+     <i class="fa fa-trash delete">delete</i>
     
     </li>
 
