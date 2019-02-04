@@ -33,6 +33,10 @@ margin:0;padding:15px;float:left;position:relative;
   margin-left:10px;
 }
 
+.delete {
+  font-size:10px;
+}
+
 .tableRight  {
 margin:0;padding:5px;float:right;position:relative;
   border:1px solid #ffffff;

@@ -34,8 +34,8 @@
               $('#day').html(e.userInputDay);
     
   // clear the user's comment from the input (for UX purposes)
-  $('#reservationName').val('')
-   $('#reservationDay').val('')
+  $('#reservationName').val('');
+   $('#reservationDay').val('');
   // create a section for comments data in your db
   var resReference = database.ref('reservationData');
   // use the set method to save data to the comments
