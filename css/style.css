@@ -30,12 +30,14 @@ height:75%:;
 margin:0;padding:15px;float:left;position:relative;
   border:1px solid #ffffff;
   width:350px;
+  margin-left:10px;
 }
 
 .tableRight  {
 margin:0;padding:5px;float:right;position:relative;
-  border:1px solid #ffffff
+  border:1px solid #ffffff;
   width:300px;
+  margin-right:10px;
 }
 
 .tableBorder {
