@@ -2,25 +2,23 @@ body {
 	text-align: center; 
   padding: 0;
   font-family:arial, helvetica, sans-serif;
+  color:#ffffff!important;
 }
 
 #content {
   margin:20px;
-  border:2px solid #cccccc;
-  padding:5px;
+  border:2px solid #ffffff
+  padding:0px;
   text-align:center;
   width:900px;
-  background-color:#fed8a1;
+  background-color:#ab102a;
 }
 
 #masthead {
   width:900px;
-
-  font-size:20px!important;
   margin:0;
   padding:0;
   height:auto;
-  color:#000000!important;
 }
 
 #map {
