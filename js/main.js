@@ -34,6 +34,7 @@ if(time >startTime || time < endTiime){
 }
 }
 
+getTime();
 
 
  $('#reservationForm').on('submit', function (e) {
