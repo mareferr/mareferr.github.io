@@ -77,30 +77,30 @@ $(window).load(function () {
 
 
 //Get reservation data and put it onto "existing reservation section"
-function getReservations() {
-  database.ref('reservationData').on('value', function (results) {
-    var allReservations = results.val();
-    var reservations = [];
-    for (var item in allReservations) {
-      var res = {
-        name: name,
-        day: day
+//function getReservations() {
+  //database.ref('reservationData').on('value', function (results) {
+    //var allReservations = results.val();
+    //var reservations = [];
+    //for (var item in allReservations) {
+      //var res = {
+        //name: name,
+        //day: day
       
-      };
-      var source = $("#reservation-template").html();
-      var template = Handlebars.compile(source);
-      var resListElement = template(res);
-      reservations.push(resListElement)
+      //};
+     // var source = $("#reservation-template").html();
+      //var template = Handlebars.compile(source);
+     // var resListElement = template(res);
+      //reservations.push(resListElement)
     }
     // remove all list items from DOM before appending list items
-    $('.reservationName').empty()
-     $('.reservationDay').empty()
+    //$('.reservationName').empty()
+     //$('.reservationDay').empty()
     // append each comment to the list of reservations in the DOM
-    for (var i in reservationData) {
-      $('.reservations').append([i])
-    }
-  });
-}
+    //for (var i in reservationData) {
+      //$('.reservations').append([i])
+    //}
+  //});
+//}
 
 
 
