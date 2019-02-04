@@ -12,14 +12,15 @@
     messagingSenderId: "494185401962"
   };
 
+// 2. Connect to your Firebase application using your reference URL
 
+// Connect to Database
   firebase.initializeApp(config);
 
   var database = firebase.database();
 
-// 2. Connect to your Firebase application using your reference URL
 
-// Connect to Database
+
 
 $(document).ready(function ()  
 {  
@@ -35,7 +36,6 @@ if(time >startTime || time < endTiime){
 }
 });
 
-getTime();
 
 
  $('#reservationForm').on('submit', function (e) {
