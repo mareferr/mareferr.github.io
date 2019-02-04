@@ -12,11 +12,11 @@
     <body><br />
     <div id="content">
       <div id="masthead">
-    <br />
-    <img src="images/monks-cafe.jpg" style="max-width:100%;width:900px;" align="left" style="margin:0;padding:0;" />
+    <img src="images/monks-cafe.jpg" style="max-width:100%;width:1000px;" align="left" style="margin:0;padding:0;" />
   <br />
   Hours: Everyday from 5am to 9pm<br />
   <div id="time"></div>
+  <script>
   var startTime="17:00:00"; // or 5:00
  var endTime ="21:00:00"  // or 9:00 
 var dt = new Date();
@@ -25,8 +25,9 @@ var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
 if(time >startTime || time < endTiime){
  $("#time").html("Open Now");
 }else{
- $("#time").html("Closed Now);
+ $("#time").html("Closed Now");
 }
+</script>
 </div>
  <br clear="all" />
 
