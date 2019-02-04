@@ -21,6 +21,20 @@
 
 // Connect to Database
 
+function getTime() {
+  var startTime="17:00:00"; // or 5:00
+ var endTime ="21:00:00"  // or 9:00 
+var dt = new Date();
+var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+
+if(time >startTime || time < endTiime){
+ $("#time").html("Open Now");
+}else{
+ $("#time").html("Closed Now");
+}
+}
+
+
 
  $('#reservationForm').on('submit', function (e) {
   // prevent the page from reloading
