@@ -52,29 +52,29 @@ if(time >startTime || time < endTiime){
   // clear the user's comment from the input (for UX purposes)
   $('#reservationName').val('');
    $('#reservationDay').val('');
-  // create a section for comments data in your db
+  // create a section for reservations data in your db
   var resReference = database.ref('reservationData');
-  // use the set method to save data to the comments
+  // use the push method to push data to the reservation section
   resReference.push({
     name: userInputName,
     day: userInputDay
   });
 });
 
- 
+ //get reservation data to put on web page
 function getReservations() {
   database.ref('reservationData').on('value', function (results) {
-    // Get all comments stored in the results we received back from Firebase
+    // Get all reservations stored in the results we received back from Firebase
     var allReservations = results.val();
-    // Set an empty array where we can add all comments we'll append to the DOM
+    // Set an empty array where we can add all reservations we'll append to the DOM
     var reservationData = [];
-    // iterate (loop) through all comments coming from database call
+    // iterate (loop) through all reservations coming from database call
     for (var item in allReservations) {
       // Create an object literal with the data we'll pass to Handlebars
       var context = {
         name: allReservations[item].name,
         day: allReservations[item].day,
-        reservationId: item
+        reservationId: ID
        };
       // Get the HTML from our Handlebars comment template
       var source = $("#reservation-template").html();
@@ -92,7 +92,7 @@ function getReservations() {
       $('.reservationData').append(reservationData[i])
     }
   };
-}
+});
 
  
 
