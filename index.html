@@ -12,9 +12,9 @@
 <body>
     <div id="content">
       <div id="masthead">
-    <img src="images/monks-cafe.jpg" style="max-width:100%;width:1000px;" align="left" style="margin:0;padding:0 0 5px 0;" />
-  <br /><br /><br clear="all" />
-  <div>Hours: Everyday from 5am to 9pm</div>
+    <img src="images/monks-cafe.jpg" style="max-width:100%;width:1000px;" align="left" style="margin:0 0 10px 0;padding:0 0 5px 0;" />
+<br clear="all" />
+  <div style="padding:5px;">Hours: Everyday from 5am to 9pm</div>
   <div id="time"></div>
 
 </div>
@@ -59,29 +59,26 @@ Existing Reservations
 
 </th>
 <tr>
-  <td valign="top"><strong>Name</strong></td>
-  <td valign="top"><strong>Day</strong></td>
+  <td valign="top"><strong>Name / Day</strong></td>
+ 
 </tr>
 <td>
 
 
-  <ul class="reservations">
-    <!-- Step 1: Create a handlebars template for a list item with the following format:
-        <li>{{item}} - ${{cost}}</li> -->
-
-
+  <ul id='reservations'>
    <script id="reservations-template" type="text/x-handlebars-template">
-    <li data-id="{{reservationId}}">
-      <span id="name">{{name}}</span><br />
-     <i class="fa fa-trash delete">delete</i>
-    
+
+    <li data-id="{{resId}}">
+      <span>{{name}} - </span><span>{{day}}</span><br />
+       <span id="likes">{{likes}}</span>
+   <a href="#" class="edit">Edit</a>
+      <span class="fa fa-trash delete">Delete</span>
+  
+  <a href="#" id="likes">Like</a>
+    <span class="fa fa-heart-o like"></span> 
     </li>
 
-     <li data-id="{{reservationId}}">
-      <span id="day">{{day}}</span><br />
-     <i class="fa fa-trash delete">delete</i>
-    
-    </li>
+    <br /><br />
 
   </script>
 
