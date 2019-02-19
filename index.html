@@ -63,24 +63,22 @@ Existing Reservations
  
 </tr>
 <td>
-
-
-  <ul id='reservations'>
-   <script id="reservations-template" type="text/x-handlebars-template">
+  
+<script id="reservations-template" type="text/x-handlebars-template">
 
     <li data-id="{{resId}}">
       <span>{{name}} - </span><span>{{day}}</span><br />
-       <span id="likes">{{likes}}</span>
-   <a href="#" class="edit">Edit</a>
+     
       <span class="fa fa-trash delete">Delete</span>
   
-  <a href="#" id="likes">Like</a>
-    <span class="fa fa-heart-o like"></span> 
     </li>
 
     <br /><br />
 
   </script>
+
+
+   <ul id='reservations'> 
 
 
 </ul>

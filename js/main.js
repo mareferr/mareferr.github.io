@@ -87,6 +87,7 @@ function getReservations() {
       var context = {
         name: allReservations[item].name,
         day: allReservations[item].day,
+        resId: item
         //likes: allReservations[item].likes
        };
       // Get the HTML from our Handlebars comment template
@@ -130,19 +131,19 @@ getReservations();
 
 //});
 
-
 $('#reservations').on('click', '.delete', function (e) {
   // Get the ID for the comment we want to update
+  var id = $(e.target).parent().data('item')
 
-  e.preventDefault();
- var resReference = database.ref('reservationData/').child;
+  // find comment whose objectId is equal to the id we're searching with
+  var resReference = database.ref('reservationData/' + id)
 
 
+  // Use remove method to remove the comment from the database
+  resReference.remove()
+});
 
 
-   resReference.remove(e);
-  
-}); 
 
 
 
